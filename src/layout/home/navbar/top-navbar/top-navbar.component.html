@@ -1,0 +1,11 @@
+<nav>
+  <div class="p-5 border-b-2 border-gray-200">
+    <ul class="flex w-full md:w-[70%] mx-auto justify-evenly">
+      @for (title of titles; track title) {
+      <app-navbar-list-item [title]="title"></app-navbar-list-item>
+      } @empty {
+      <app-navbar-list-item>There is no title.</app-navbar-list-item>
+      }
+    </ul>
+  </div>
+</nav>
