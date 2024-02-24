@@ -3,6 +3,7 @@ import { NavbarListItemComponent } from './navbar-list-item/navbar-list-item/nav
 import { IconComponent } from '../../../../shared/components/icon/icon.component';
 import { BaseButtonDarkComponent } from '../../../../shared/components/base-button-dark/base-button-dark.component';
 import { BaseButtonLightComponent } from '../../../../shared/components/base-button-light/base-button-light.component';
+import { LogoComponent } from '../../../../shared/components/logo/logo.component';
 
 @Component({
   selector: 'app-top-navbar',
@@ -12,6 +13,7 @@ import { BaseButtonLightComponent } from '../../../../shared/components/base-but
     IconComponent,
     BaseButtonDarkComponent,
     BaseButtonLightComponent,
+    LogoComponent,
   ],
   templateUrl: './top-navbar.component.html',
   styleUrl: './top-navbar.component.css',
