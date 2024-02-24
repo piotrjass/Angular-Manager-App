@@ -1,0 +1,34 @@
+<section class="">
+  <form
+    #loginForm="NgForm"
+    (submit)="onSubmit(LoginForm)"
+    class="flex flex-col mt-[10%] w-fit h-fit m-auto border-gray-200 border-2 p-5 justify-center items-center text-xl drop-shadow-md rounded-md gap-10"
+  >
+    <label for="Email">Email</label>
+    <input
+      [(ngModel)]="email"
+      placeholder="email"
+      type="email"
+      name="Email"
+      id="#login"
+      required
+      minlength="5"
+      maxlength="20"
+    />
+    <p>{{ email }}</p>
+    <label for="password">Password</label>
+    <input
+      [(ngModel)]="password"
+      placeholder="password"
+      type="password"
+      name="password"
+      id="password"
+      required
+      minlength="5"
+      maxlength="20"
+    />
+    {{ password }}
+    <p>it has changed!</p>
+    <button type="submit">submit</button>
+  </form>
+</section>
