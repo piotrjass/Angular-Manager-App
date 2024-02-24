@@ -1,7 +1,7 @@
 <nav>
-  <div class="p-5 border-b-2 border-gray-200 flex items-center">
+  <div class="px-10 py-5 border-b-2 border-gray-200 flex items-center">
     <app-logo></app-logo>
-    <ul class="flex w-full md:w-[70%] mx-auto justify-evenly">
+    <ul class="flex w-full md:w-[30%] mx-auto justify-evenly">
       @for (title of titles; track title) {
       <app-navbar-list-item [title]="title"></app-navbar-list-item>
       } @empty {
