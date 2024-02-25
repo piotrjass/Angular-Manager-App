@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { BaseButtonDarkComponent } from '../../../../shared/components/base-button-dark/base-button-dark.component';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { BaseButtonLightComponent } from '../../../../shared/components/base-button-light/base-button-light.component';
 
 @Component({
   selector: 'app-login-form',
   standalone: true,
-  imports: [BaseButtonDarkComponent, FormsModule, CommonModule],
+  imports: [BaseButtonLightComponent, FormsModule, CommonModule, RouterLink],
   templateUrl: './login-form.component.html',
   styleUrl: './login-form.component.css',
 })

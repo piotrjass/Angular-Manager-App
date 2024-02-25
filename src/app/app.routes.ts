@@ -1,7 +1,31 @@
 import { Routes } from '@angular/router';
 import { HomePageComponent } from '../layout/home/home-page/home-page.component';
 import { LoginPageComponent } from '../layout/login/login-page/login-page.component';
+import { SignupFormComponent } from '../core/components/login/signup-form/signup-form.component';
+import { LoginFormComponent } from '../core/components/login/login-form/login-form.component';
 
+// export const routes: Routes = [
+//   {
+//     path: '',
+//     component: HomePageComponent,
+//     title: 'HomePage',
+//   },
+//   {
+//     path: 'login',
+//     component: LoginPageComponent,
+//     title: 'LoginPage',
+//   },
+//   {
+//     path: 'signup-form',
+//     component: SignupFormComponent,
+//     title: 'SignupPage',
+//   },
+//   {
+//     path: 'login-form',
+//     component: LoginFormComponent,
+//     title: 'Signup',
+//   },
+// ];
 export const routes: Routes = [
   {
     path: '',
@@ -9,13 +33,23 @@ export const routes: Routes = [
     title: 'HomePage',
   },
   {
-    path: 'login',
+    path: 'login-form',
     component: LoginPageComponent,
-    title: 'LoginPage',
+    children: [
+      {
+        path: '',
+        component: LoginFormComponent,
+      },
+    ],
   },
   {
-    path: 'singup',
-    component: LoginPageComponent,
-    title: 'Signup',
+    path: 'signup-form',
+    component: LoginPageComponent, // Użyj LoginPageComponent jako layout dla SignupFormComponent
+    children: [
+      {
+        path: '',
+        component: SignupFormComponent,
+      },
+    ],
   },
 ];
