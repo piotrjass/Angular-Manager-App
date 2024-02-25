@@ -1,32 +1,47 @@
-<form
-  #f="ngForm"
-  (ngSubmit)="onSubmit(f)"
-  class="flex flex-col gap-5 border-2 border-gray-200 w-[20rem] h-[20rem] items-center justify-center"
->
-  <label for="email">Email</label>
-  <input
-    type="email"
-    name="email"
-    placeholder="email"
-    #login="ngModel"
-    required
-    minlength="5"
-    maxlength="20"
-    ngModel
-  />
-  <label for="email">Password</label>
-  <input
-    placeholder="password"
-    type="password"
-    name="password"
-    ngModel
-    #password="ngModel"
-    required
-    minlength="5"
-    maxlength="20"
-  />
+<div class="w-full h-screen flex items-center justify-center flex-col gap-5">
+  <p class="text-3xl font-semibold">Log in to your account</p>
+  <p class="italic">
+    Dont have an account? <span class="underline">Create an account</span>
+  </p>
+  <form
+    #f="ngForm"
+    (ngSubmit)="onSubmit(f)"
+    class="flex flex-col gap-5 w-fit h-[fit] items-center justify-center p-10 rounded-md z-10"
+  >
+    <label for="email" class="text-2xl font-semibold drop-shadow-md"
+      >Email</label
+    >
+    <input
+      class="bg-gray-100 text-xl p-3 rounded-xl"
+      type="email"
+      name="email"
+      placeholder="email"
+      #login="ngModel"
+      required
+      minlength="5"
+      maxlength="20"
+      ngModel
+    />
+    <label for="email" class="text-2xl font-semibold drop-shadow-md"
+      >Password</label
+    >
+    <input
+      class="bg-gray-100 text-xl p-3 rounded-xl"
+      placeholder="password"
+      type="password"
+      name="password"
+      ngModel
+      #password="ngModel"
+      required
+      minlength="5"
+      maxlength="20"
+    />
 
-  <button type="submit" class="border-2 border-black rounded-lg p-5">
-    submit
-  </button>
-</form>
+    <button
+      type="submit"
+      class="bg-blue-600 px-10 text-xl py-3 rounded-md text-white font-semibold"
+    >
+      Log in
+    </button>
+  </form>
+</div>
