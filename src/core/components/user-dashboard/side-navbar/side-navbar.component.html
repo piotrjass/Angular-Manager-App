@@ -1,0 +1,27 @@
+<nav
+  class="flex flex-col p-10 gap-10 border-r-2 border-indigo-150 h-screen items-center"
+>
+  <p
+    class="font-bold text-2xl text-gray-500 hover:text-indigo-800 transition-all duration-300 drop-shadow-md text-center"
+  >
+    AppChief
+  </p>
+  <app-side-navbar-card></app-side-navbar-card>
+  <div>
+    <p class="font-bold text-gray-500 my-2 text-center">Channels</p>
+
+    <ul class="flex flex-col gap-1">
+      @for (title of titles; track title) {
+      <app-side-navbar-item [title]="title"></app-side-navbar-item>
+      }
+    </ul>
+  </div>
+  <div>
+    <p class="font-bold text-gray-500 my-2 text-center">Tags</p>
+    <ul>
+      @for (tag of tags; track tag) {
+      <app-tag-item [title]="tag.title" [class]="tag.color"></app-tag-item>
+      }
+    </ul>
+  </div>
+</nav>

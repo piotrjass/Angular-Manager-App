@@ -3,29 +3,8 @@ import { HomePageComponent } from '../layout/home/home-page/home-page.component'
 import { LoginPageComponent } from '../layout/login/login-page/login-page.component';
 import { SignupFormComponent } from '../core/components/login/signup-form/signup-form.component';
 import { LoginFormComponent } from '../core/components/login/login-form/login-form.component';
+import { UserdashboardComponent } from '../layout/userdashboard/userdashboard.component';
 
-// export const routes: Routes = [
-//   {
-//     path: '',
-//     component: HomePageComponent,
-//     title: 'HomePage',
-//   },
-//   {
-//     path: 'login',
-//     component: LoginPageComponent,
-//     title: 'LoginPage',
-//   },
-//   {
-//     path: 'signup-form',
-//     component: SignupFormComponent,
-//     title: 'SignupPage',
-//   },
-//   {
-//     path: 'login-form',
-//     component: LoginFormComponent,
-//     title: 'Signup',
-//   },
-// ];
 export const routes: Routes = [
   {
     path: '',
@@ -51,5 +30,9 @@ export const routes: Routes = [
         component: SignupFormComponent,
       },
     ],
+  },
+  {
+    path: 'user-dashboard',
+    component: UserdashboardComponent,
   },
 ];
