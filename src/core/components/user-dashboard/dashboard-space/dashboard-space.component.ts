@@ -7,11 +7,18 @@ import {
   moveItemInArray,
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
+import { DragDropItemComponent } from '../drag-drop-item/drag-drop-item.component';
 
 @Component({
   selector: 'app-dashboard-space',
   standalone: true,
-  imports: [CdkDropListGroup, CdkDropList, CdkDrag],
+  imports: [
+    CdkDropListGroup,
+    CdkDropList,
+    CdkDrag,
+    DragDropItemComponent,
+    DragDropItemComponent,
+  ],
   templateUrl: './dashboard-space.component.html',
   styleUrl: './dashboard-space.component.css',
 })

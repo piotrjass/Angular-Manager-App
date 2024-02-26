@@ -1,11 +1,13 @@
-<p href="/dashboard" class="group">
-    <div class="flex flex-row space-x-8 w-72 text-lg pb-3 text-gray-200"> 
-        
-        <div class="h-8 w-8 rounded transform -translate-x-7 group-hover:bg-green-300"></div>
-
-        <div class="flex flex-row items-center space-x-8 transform -translate-x-10 -translate-y-1">
-            <i class="bi bi-columns-gap group-hover:text-green-300 transform translate-x-1"></i>
-            <h2 class="hover:font-semibold group-hover:text-green-300 transform translate-y-1 text-base">Dashboard</h2>
-        </div>
-    </div>
-</p>
+<div
+  name="container"
+  class="hover:cursor-pointer pr-2 min-w-[10rem] w-fit text-nowrap h-[3rem] flex items-center group rounded-md"
+>
+  <div
+    class="transition-all duration-300 h-[60%] w-[5px] rounded bg-black group-hover:bg-indigo-600 mr-5"
+  ></div>
+  <div
+    class="transition-all duration-300 text-2xl rounded flex items-center justify-center group-hover:text-indigo-600 font-bold pr-3"
+  >
+    {{ title }}
+  </div>
+</div>
