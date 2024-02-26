@@ -1,7 +1,10 @@
-<div class="bg-indigo-50 w-full h-full" cdkDropListGroup>
-  <div class="example-container">
-    <h2>To do</h2>
-
+<div class="w-full h-full flex gap-3" cdkDropListGroup>
+  <div
+    class="example-container flex flex-col text-center h-fit min-h-[10rem] w-[20%] border-2 border-gray-300"
+  >
+    <h2 class="text-xl font-semibold mx-auto py-4 bg-gray-100 w-full">
+      Monday
+    </h2>
     <div
       cdkDropList
       [cdkDropListData]="todo"
@@ -9,27 +12,39 @@
       (cdkDropListDropped)="drop($event)"
     >
       @for (item of todo; track item) {
-      <!-- <div class="example-box" cdkDrag>{{ item }}</div> -->
+
       <app-drag-drop-item [title]="item" cdkDrag></app-drag-drop-item>
       }
     </div>
   </div>
-
-  <div class="example-container">
-    <h2>Done</h2>
+  <div
+    class="example-container flex flex-col text-center w-[20%] border-2 border-gray-300 h-fit min-h-[10rem]"
+  >
+    <h2 class="text-xl font-semibold mx-auto py-4 bg-gray-100 w-full">
+      Tuesday
+    </h2>
 
     <div
       cdkDropList
       [cdkDropListData]="done"
-      class="example-list"
+      class="w-full min-h-[5rem]"
       (cdkDropListDropped)="drop($event)"
     >
       @for (item of done; track item) {
-      <!-- <div class="example-box px-3 py-2 text-center font-semibold" cdkDrag>
-        {{ item }}
-      </div> -->
+
       <app-drag-drop-item [title]="item" cdkDrag></app-drag-drop-item>
       }
     </div>
+  </div>
+  <div class="w-[20rem] h-[20rem] bg-yellow-100 flex flex-col">
+    <button (click)="addNewTask()">Add new task</button>
+    <p>{{ newTask }}</p>
+    <input
+      type="text"
+      maxlength="15"
+      minlength="3"
+      class="w-[10rem] mx-auto text-lg"
+      [(ngModel)]="newTask"
+    />
   </div>
 </div>

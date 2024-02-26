@@ -8,6 +8,8 @@ import {
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
 import { DragDropItemComponent } from '../drag-drop-item/drag-drop-item.component';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard-space',
@@ -18,6 +20,8 @@ import { DragDropItemComponent } from '../drag-drop-item/drag-drop-item.componen
     CdkDrag,
     DragDropItemComponent,
     DragDropItemComponent,
+    MatIconModule,
+    FormsModule,
   ],
   templateUrl: './dashboard-space.component.html',
   styleUrl: './dashboard-space.component.css',
@@ -26,6 +30,12 @@ export class DashboardSpaceComponent {
   todo = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
 
   done = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
+
+  newTask: string = '';
+
+  addNewTask() {
+    this.todo.push(this.newTask);
+  }
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
