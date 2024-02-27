@@ -9,5 +9,5 @@ import { TopNavbarItemComponent } from '../top-navbar-item/top-navbar-item.compo
   styleUrl: './top-navbar.component.css',
 })
 export class TopNavbarComponent {
-  titles: string[] = ['Calendar', 'Priorites', 'Short-term', 'Long-term'];
+  titles: string[] = ['Calendar', 'Ideas', 'Long-term'];
 }

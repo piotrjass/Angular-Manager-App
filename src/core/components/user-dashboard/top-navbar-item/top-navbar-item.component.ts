@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
-
+import { MatIcon } from '@angular/material/icon';
 @Component({
   selector: 'app-top-navbar-item',
   standalone: true,
-  imports: [],
+  imports: [MatIcon],
   templateUrl: './top-navbar-item.component.html',
   styleUrl: './top-navbar-item.component.css',
 })
