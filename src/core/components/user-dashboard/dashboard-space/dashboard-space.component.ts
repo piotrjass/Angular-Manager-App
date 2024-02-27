@@ -10,6 +10,7 @@ import {
 import { DragDropItemComponent } from '../drag-drop-item/drag-drop-item.component';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { AddTaskFormComponent } from '../add-task-form/add-task-form.component';
 
 @Component({
   selector: 'app-dashboard-space',
@@ -22,6 +23,7 @@ import { FormsModule } from '@angular/forms';
     DragDropItemComponent,
     MatIconModule,
     FormsModule,
+    AddTaskFormComponent,
   ],
   templateUrl: './dashboard-space.component.html',
   styleUrl: './dashboard-space.component.css',

@@ -1,0 +1,39 @@
+<form
+  action=""
+  class="border-2 border-black p-5 flex flex-col justify-center items-center gap-5"
+  #f="ngForm"
+  (ngSubmit)="onSubmit(f)"
+>
+  <label for="" class="text-lg font-semibold drop-shadow-lg"
+    >Add new task!</label
+  >
+  <input
+    type="text"
+    name="task"
+    id=""
+    class=""
+    placeholder="new Task"
+    [(ngModel)]="newTaskText"
+  />
+
+  <select
+    name="day"
+    class="w-full text-lg text-center p-2 rounded-lg"
+    [(ngModel)]="selectedDay"
+  >
+    @for (day of days; track day){
+    <option [value]="day">{{ day }}</option>
+    }
+  </select>
+  <select
+    name="Priority"
+    class="w-full text-lg text-center p-2 rounded-lg"
+    [(ngModel)]="selectedPriority"
+  >
+    @for (p of priorities; track p){
+    <option [value]="p">{{ p }}</option>
+    }
+  </select>
+  <p>{{ newTaskText }}</p>
+  <button type="submit">Submit form!</button>
+</form>
