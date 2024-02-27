@@ -1,59 +1,105 @@
-<div class="w-full h-full flex gap-3" cdkDropListGroup>
+<div class="w-full h-full flex gap-3 justify-center py-10" cdkDropListGroup>
   <div
-    class="example-container flex flex-col text-center h-fit min-h-[10rem] w-[20%] border-2 border-gray-300"
+    class="example-container flex flex-col text-center h-fit min-h-[10rem] w-[15%] border-2 border-gray-100 rounded-md shadow-md"
   >
-    <h2 class="text-xl font-semibold mx-auto py-4 bg-gray-100 w-full">
+    <h2
+      class="text-xl font-semibold mx-auto py-4 bg-green-100 w-full drop-shadow-md"
+    >
       Monday
     </h2>
     <div
       cdkDropList
-      [cdkDropListData]="todo"
-      class="example-list"
+      [cdkDropListData]="Monday"
+      class="example-list bg-red-100 min-h-[5rem]"
       (cdkDropListDropped)="drop($event)"
     >
-      @for (item of todo; track item) {
+      @for (item of Monday; track item) {
+
+      <app-drag-drop-item [title]="item" cdkDrag></app-drag-drop-item>
+      }
+    </div>
+  </div>
+  <h1>{{ Monday }}</h1>
+  <h1>{{ Tuesday }}</h1>
+  <div
+    class="example-container flex flex-col text-center h-fit min-h-[10rem] w-[15%] border-2 border-gray-100 rounded-md shadow-md"
+  >
+    <h2
+      class="text-xl font-semibold mx-auto py-4 bg-blue-100 w-full drop-shadow-md"
+    >
+      Tuesday
+    </h2>
+    <div
+      cdkDropList
+      [cdkDropListData]="Tuesday"
+      class="example-list bg-red-100 min-h-[5rem]"
+      (cdkDropListDropped)="drop($event)"
+    >
+      @for (item of Tuesday; track item) {
 
       <app-drag-drop-item [title]="item" cdkDrag></app-drag-drop-item>
       }
     </div>
   </div>
   <div
-    class="example-container flex flex-col text-center w-[20%] border-2 border-gray-300 h-fit min-h-[10rem]"
+    class="example-container flex flex-col text-center h-fit min-h-[10rem] w-[15%] border-2 border-gray-100 rounded-md shadow-md"
   >
-    <h2 class="text-xl font-semibold mx-auto py-4 bg-gray-100 w-full">
-      Tuesday
+    <h2
+      class="text-xl font-semibold mx-auto py-4 bg-yellow-100 drop-shadow-md w-full"
+    >
+      Wednesday
     </h2>
-
     <div
       cdkDropList
-      [cdkDropListData]="done"
-      class="w-full min-h-[5rem]"
+      [cdkDropListData]="Wednesday"
+      class="example-list bg-red-100 min-h-[5rem]"
       (cdkDropListDropped)="drop($event)"
     >
-      @for (item of done; track item) {
+      @for (item of Wednesday; track item) {
 
       <app-drag-drop-item [title]="item" cdkDrag></app-drag-drop-item>
       }
     </div>
   </div>
-  <div class="w-[20rem] h-[20rem] bg-yellow-100 flex flex-col">
-    <button (click)="addNewTask()">Add new task</button>
-    <p>{{ newTask }}</p>
-    <input
-      type="text"
-      maxlength="15"
-      minlength="3"
-      class="w-[10rem] mx-auto text-lg"
-      [(ngModel)]="newTask"
-    />
-  </div>
-  <mat-icon class="scale-125"
-    ><span
-      class="material-symbols-outlined"
-      class="cursor-pointer transition-all duration-300 hover:text-indigo-600 hover:scale-110"
-    >
-      add_circle
-    </span></mat-icon
+  <div
+    class="example-container flex flex-col text-center h-fit min-h-[10rem] w-[15%] border-2 border-gray-100 rounded-md shadow-md"
   >
-  <app-add-task-form></app-add-task-form>
+    <h2
+      class="text-xl font-semibold mx-auto py-4 bg-red-100 drop-shadow-md w-full"
+    >
+      Thursday
+    </h2>
+    <div
+      cdkDropList
+      [cdkDropListData]="Thursday"
+      class="example-list bg-red-100 min-h-[5rem]"
+      (cdkDropListDropped)="drop($event)"
+    >
+      @for (item of Thursday; track item) {
+
+      <app-drag-drop-item [title]="item" cdkDrag></app-drag-drop-item>
+      }
+    </div>
+  </div>
+
+  <div
+    class="example-container flex flex-col text-center h-fit min-h-[10rem] w-[15%] border-2 border-gray-100 rounded-md shadow-md"
+  >
+    <h2
+      class="text-xl font-semibold mx-auto py-4 bg-teal-100 drop-shadow-md w-full"
+    >
+      Friday
+    </h2>
+    <div
+      cdkDropList
+      [cdkDropListData]="Friday"
+      class="example-list bg-red-100 min-h-[5rem]"
+      (cdkDropListDropped)="drop($event)"
+    >
+      @for (task of Friday; track task) {
+
+      <app-drag-drop-item [title]="task" cdkDrag></app-drag-drop-item>
+      }
+    </div>
+  </div>
 </div>

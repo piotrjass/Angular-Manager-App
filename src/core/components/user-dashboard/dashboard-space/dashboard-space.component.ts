@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import {
   CdkDragDrop,
   CdkDrag,
@@ -11,6 +12,7 @@ import { DragDropItemComponent } from '../drag-drop-item/drag-drop-item.componen
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { AddTaskFormComponent } from '../add-task-form/add-task-form.component';
+import { TaskService } from '../../../../shared/services/task.service';
 
 @Component({
   selector: 'app-dashboard-space',
@@ -24,12 +26,25 @@ import { AddTaskFormComponent } from '../add-task-form/add-task-form.component';
     MatIconModule,
     FormsModule,
     AddTaskFormComponent,
+    CommonModule,
   ],
   templateUrl: './dashboard-space.component.html',
   styleUrl: './dashboard-space.component.css',
 })
 export class DashboardSpaceComponent {
+  constructor(private e: TaskService) {
+    this.tasks = this.e.getTasks();
+  }
+
+  tasks: any[];
+
   todo = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
+
+  Monday = ['Refractoring'];
+  Tuesday = ['Gym'];
+  Wednesday = ['Interview'];
+  Thursday = ['TV'];
+  Friday = ['Sport'];
 
   done = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
 
@@ -37,6 +52,10 @@ export class DashboardSpaceComponent {
 
   addNewTask() {
     this.todo.push(this.newTask);
+  }
+
+  handleFormSubmission(formData: any) {
+    this.todo.push(formData);
   }
 
   drop(event: CdkDragDrop<string[]>) {

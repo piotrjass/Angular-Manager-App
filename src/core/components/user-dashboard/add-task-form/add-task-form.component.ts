@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, NgForm } from '@angular/forms';
 
@@ -10,6 +10,7 @@ import { FormsModule, NgForm } from '@angular/forms';
   styleUrl: './add-task-form.component.css',
 })
 export class AddTaskFormComponent {
+  @Output() formSubmitted: EventEmitter<any> = new EventEmitter<any>();
   selectedDay: string = '';
   selectedPriority: string = '';
   newTaskText: string = '';
@@ -23,8 +24,11 @@ export class AddTaskFormComponent {
     'Sunday',
   ];
   priorities: string[] = ['High', 'Medium', 'Low'];
+  // onSubmit(f: NgForm) {
+  //   console.log(f.value);
+  //   console.log(f.valid);
+  // }
   onSubmit(f: NgForm) {
-    console.log(f.value);
-    console.log(f.valid);
+    this.formSubmitted.emit(f.value);
   }
 }
