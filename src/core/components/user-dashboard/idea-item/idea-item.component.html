@@ -1,0 +1,10 @@
+<div class="flex gap-5">
+  @for (idea of ideas; track idea.title){
+  <div
+    class="border-2 border-gray-100 shadow-md p-5 min-w-[15rem] h-[15rem] rounded-xl flex items-center justify-center"
+    [class]="idea.color"
+  >
+    <p class="kalam-regular text-2xl drop-shadow-md">{{ idea.title }}</p>
+  </div>
+  }
+</div>
