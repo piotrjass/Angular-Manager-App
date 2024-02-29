@@ -4,6 +4,8 @@ import { LoginPageComponent } from '../layout/login/login-page/login-page.compon
 import { SignupFormComponent } from '../core/components/login/signup-form/signup-form.component';
 import { LoginFormComponent } from '../core/components/login/login-form/login-form.component';
 import { UserdashboardComponent } from '../layout/userdashboard/userdashboard.component';
+import { CalendarComponent } from '../core/components/user-dashboard/calendar/calendar.component';
+import { IdeasComponent } from '../core/components/user-dashboard/ideas/ideas.component';
 
 export const routes: Routes = [
   {
@@ -23,7 +25,7 @@ export const routes: Routes = [
   },
   {
     path: 'signup-form',
-    component: LoginPageComponent, // Użyj LoginPageComponent jako layout dla SignupFormComponent
+    component: LoginPageComponent,
     children: [
       {
         path: '',
@@ -34,5 +36,15 @@ export const routes: Routes = [
   {
     path: 'user-dashboard',
     component: UserdashboardComponent,
+    children: [
+      {
+        path: 'calendar',
+        component: CalendarComponent,
+      },
+      {
+        path: 'ideas',
+        component: IdeasComponent,
+      },
+    ],
   },
 ];

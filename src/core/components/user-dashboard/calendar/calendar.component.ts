@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 import {
   CdkDragDrop,
   CdkDrag,
@@ -16,7 +15,7 @@ import { AddTaskFormComponent } from '../add-task-form/add-task-form.component';
 import { TaskService } from '../../../../shared/services/task.service';
 
 @Component({
-  selector: 'app-dashboard-space',
+  selector: 'app-calendar',
   standalone: true,
   imports: [
     CdkDropListGroup,
@@ -28,12 +27,11 @@ import { TaskService } from '../../../../shared/services/task.service';
     FormsModule,
     AddTaskFormComponent,
     CommonModule,
-    RouterModule,
   ],
-  templateUrl: './dashboard-space.component.html',
-  styleUrl: './dashboard-space.component.css',
+  templateUrl: './calendar.component.html',
+  styleUrl: './calendar.component.css',
 })
-export class DashboardSpaceComponent {
+export class CalendarComponent {
   constructor(private e: TaskService) {
     this.tasks = this.e.getTasks();
   }

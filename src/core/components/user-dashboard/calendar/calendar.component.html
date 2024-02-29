@@ -1,0 +1,106 @@
+<div class="flex w-[90%] justify-evenly">
+  <div
+    class="example-container flex flex-col text-center h-fit min-h-[10rem] w-[15%] border-2 border-gray-100 rounded-md shadow-md"
+  >
+    <h2
+      class="text-xl font-semibold mx-auto py-4 bg-green-100 w-full drop-shadow-md"
+    >
+      Monday
+    </h2>
+    <div
+      #mondayList="cdkDropList"
+      cdkDropList
+      [cdkDropListData]="Monday"
+      class="example-list bg-red-100 min-h-[5rem]"
+      (cdkDropListDropped)="drop($event)"
+    >
+      @for (item of Monday; track item) {
+
+      <app-drag-drop-item [title]="item" cdkDrag></app-drag-drop-item>
+      }
+    </div>
+  </div>
+  <div class="flex"></div>
+
+  <div
+    class="example-container flex flex-col text-center h-fit min-h-[10rem] w-[15%] border-2 border-gray-100 rounded-md shadow-md"
+  >
+    <h2
+      class="text-xl font-semibold mx-auto py-4 bg-blue-100 w-full drop-shadow-md"
+    >
+      Tuesday
+    </h2>
+    <div
+      cdkDropList
+      [cdkDropListData]="Tuesday"
+      class="example-list bg-red-100 min-h-[5rem]"
+      (cdkDropListDropped)="drop($event)"
+    >
+      @for (item of Tuesday; track item) {
+
+      <app-drag-drop-item [title]="item" cdkDrag></app-drag-drop-item>
+      }
+    </div>
+  </div>
+  <div
+    class="example-container flex flex-col text-center h-fit min-h-[10rem] w-[15%] border-2 border-gray-100 rounded-md shadow-md"
+  >
+    <h2
+      class="text-xl font-semibold mx-auto py-4 bg-yellow-100 drop-shadow-md w-full"
+    >
+      Wednesday
+    </h2>
+    <div
+      cdkDropList
+      [cdkDropListData]="Wednesday"
+      class="example-list bg-red-100 min-h-[5rem]"
+      (cdkDropListDropped)="drop($event)"
+    >
+      @for (item of Wednesday; track item) {
+
+      <app-drag-drop-item [title]="item" cdkDrag></app-drag-drop-item>
+      }
+    </div>
+  </div>
+  <div
+    class="example-container flex flex-col text-center h-fit min-h-[10rem] w-[15%] border-2 border-gray-100 rounded-md shadow-md"
+  >
+    <h2
+      class="text-xl font-semibold mx-auto py-4 bg-red-100 drop-shadow-md w-full"
+    >
+      Thursday
+    </h2>
+    <div
+      cdkDropList
+      [cdkDropListData]="Thursday"
+      class="example-list bg-red-100 min-h-[5rem]"
+      (cdkDropListDropped)="drop($event)"
+    >
+      @for (item of Thursday; track item) {
+
+      <app-drag-drop-item [title]="item" cdkDrag></app-drag-drop-item>
+      }
+    </div>
+  </div>
+
+  <div
+    class="example-container flex flex-col text-center h-fit min-h-[10rem] w-[15%] border-2 border-gray-100 rounded-md shadow-md"
+  >
+    <h2
+      class="text-xl font-semibold mx-auto py-4 bg-teal-100 drop-shadow-md w-full"
+    >
+      Friday
+    </h2>
+    <div
+      cdkDropList
+      [cdkDropListData]="Friday"
+      class="example-list bg-red-100 min-h-[5rem]"
+      (cdkDropListDropped)="drop($event)"
+    >
+      @for (task of Friday; track task) {
+
+      <app-drag-drop-item [title]="task" cdkDrag></app-drag-drop-item>
+      }
+    </div>
+  </div>
+</div>
