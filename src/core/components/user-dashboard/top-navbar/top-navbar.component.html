@@ -1,5 +1,9 @@
 <div class="flex gap-5">
-  @for (title of titles; track title) {
-  <app-top-navbar-item [title]="title"></app-top-navbar-item>
+  @for (c of components; track c.title) {
+  <app-top-navbar-item
+    [title]="c.title"
+    [icon]="c.icon"
+    [link]="c.link"
+  ></app-top-navbar-item>
   }
 </div>

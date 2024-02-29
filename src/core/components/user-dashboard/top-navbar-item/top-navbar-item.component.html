@@ -1,13 +1,14 @@
-<div
+<button
   class="w-[10rem] h-[5rem] flex flex-col items-center justify-end gap-5 group"
+  [routerLink]="link"
 >
   <div
     class="flex items-center justify-center gap-5 group-hover:text-indigo-700 transition-all duration-300"
   >
     <p class="text-xl font-semibold">{{ title }}</p>
-    <mat-icon>calendar_month</mat-icon>
+    <mat-icon>{{ icon }}</mat-icon>
   </div>
   <div
     class="h-[5px] w-[80%] bg-transparent rounded-md group-hover:bg-indigo-700 transition-all duration-300"
   ></div>
-</div>
+</button>
