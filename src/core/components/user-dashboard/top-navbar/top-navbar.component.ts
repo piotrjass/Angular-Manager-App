@@ -17,6 +17,6 @@ export class TopNavbarComponent {
       link: 'calendar',
     },
     { title: 'Ideas', icon: 'lightbulb', link: 'ideas' },
-    { title: 'LongTerm', icon: 'rocket_launch', link: 'LongTerm' },
+    { title: 'LongTerm', icon: 'rocket_launch', link: 'long-term' },
   ];
 }

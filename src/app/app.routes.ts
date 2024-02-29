@@ -6,6 +6,7 @@ import { LoginFormComponent } from '../core/components/login/login-form/login-fo
 import { UserdashboardComponent } from '../layout/userdashboard/userdashboard.component';
 import { CalendarComponent } from '../core/components/user-dashboard/calendar/calendar.component';
 import { IdeasComponent } from '../core/components/user-dashboard/ideas/ideas.component';
+import { LongTermDashboardComponent } from '../core/components/user-dashboard/long-term-dashboard/long-term-dashboard.component';
 
 export const routes: Routes = [
   {
@@ -44,6 +45,10 @@ export const routes: Routes = [
       {
         path: 'ideas',
         component: IdeasComponent,
+      },
+      {
+        path: 'long-term',
+        component: LongTermDashboardComponent,
       },
     ],
   },
