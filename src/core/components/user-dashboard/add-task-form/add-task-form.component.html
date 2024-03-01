@@ -11,16 +11,18 @@
     type="text"
     name="task"
     id=""
-    class=""
+    class="w-full text-xl bg-gray-100 rounded-lg drop-shadow-md p-5"
     placeholder="new Task"
     [(ngModel)]="newTaskText"
   />
 
   <select
     name="day"
+    placeholder="Day of the week"
     class="w-full text-lg text-center p-2 rounded-lg"
     [(ngModel)]="selectedDay"
   >
+    <option value="" disabled selected>Select day</option>
     @for (day of days; track day){
     <option [value]="day">{{ day }}</option>
     }
@@ -30,10 +32,16 @@
     class="w-full text-lg text-center p-2 rounded-lg"
     [(ngModel)]="selectedPriority"
   >
+    <option value="" disabled selected>Select priority</option>
     @for (p of priorities; track p){
     <option [value]="p">{{ p }}</option>
     }
   </select>
   <p>{{ newTaskText }}</p>
-  <button type="submit">Submit form!</button>
+  <button
+    type="submit"
+    class="px-5 border-2 border-transparent py-3 rounded-xl bg-indigo-700 text-white font-semibold text-lg transition-all duration-300 hover:text-indigo-700 hover:border-indigo-700 hover:bg-white"
+  >
+    Add task
+  </button>
 </form>

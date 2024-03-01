@@ -50,6 +50,42 @@ export class CalendarComponent {
 
   newTask: string = '';
 
+  getDatesOfWeekForCurrentWeek(): string[] {
+    const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    const today = new Date();
+    const currentDayOfWeek = today.getDay(); // 0 (Sunday) to 6 (Saturday)
+
+    // Calculate the difference between current day and Monday
+    const daysUntilMonday = (7 + currentDayOfWeek - 1) % 7;
+
+    // Set the date to Monday of the current week
+    const monday = new Date(today);
+    monday.setDate(today.getDate() - daysUntilMonday);
+
+    // Create an array to hold dates of the week
+    const weekDates: string[] = [];
+
+    // Helper function to add leading zeros
+    const addLeadingZero = (num: number): string => {
+      return num < 10 ? `0${num}` : `${num}`;
+    };
+
+    // Populate the array with dates from Monday to Friday
+    for (let i = 0; i < 5; i++) {
+      const currentDate = new Date(monday);
+      currentDate.setDate(monday.getDate() + i);
+      const formattedDate = `${addLeadingZero(
+        currentDate.getDate(),
+      )}.${addLeadingZero(
+        currentDate.getMonth() + 1,
+      )}.${currentDate.getFullYear()}`;
+      weekDates.push(formattedDate);
+    }
+
+    return weekDates;
+  }
+  datesOfWeekForCurrentWeek = this.getDatesOfWeekForCurrentWeek();
+
   addNewTask() {
     this.todo.push(this.newTask);
   }
