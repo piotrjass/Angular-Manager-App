@@ -7,15 +7,15 @@ export class IdeasService {
   ideas: any[] = [
     {
       title: 'Angular shop app',
-      color: 'bg-yellow-100',
+      color: 'bg-yellow-200',
     },
     {
       title: 'Typescript server',
-      color: 'bg-blue-100',
+      color: 'bg-blue-200',
     },
     {
       title: 'Blog app',
-      color: 'bg-green-100',
+      color: 'bg-green-200',
     },
   ];
 

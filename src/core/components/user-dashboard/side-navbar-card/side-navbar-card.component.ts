@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './side-navbar-card.component.html',
-  styleUrl: './side-navbar-card.component.css'
+  styleUrl: './side-navbar-card.component.css',
 })
-export class SideNavbarCardComponent {
-
-}
+export class SideNavbarCardComponent {}
