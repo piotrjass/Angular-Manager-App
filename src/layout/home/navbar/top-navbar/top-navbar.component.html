@@ -1,21 +1,40 @@
 <nav>
-  <div class="px-10 py-5 border-b-2 border-gray-200 flex items-center">
-    <app-logo></app-logo>
-    <ul class="flex w-full md:w-[30%] mx-auto justify-evenly">
+  <div
+    class="px-10 py-3 border-b-2 border-gray-200 flex flex-col md:flex-row items-center"
+  >
+    <div class="flex items-center justify-between w-full md:w-fit">
+      <app-logo></app-logo>
+      <div class="md:hidden">
+        <ng-icon
+          class="text-3xl cursor-pointer md:hidden"
+          name="tablerMenu2"
+          (click)="toggleMenu()"
+        ></ng-icon>
+      </div>
+    </div>
+    <ul
+      class="flex w-full items-center text-center gap-5 py-3 flex-col md:flex-row md:w-[30%] mx-auto justify-evenly"
+      [class.hidden]="!isMenuOpen"
+    >
       @for (title of titles; track title) {
       <app-navbar-list-item [title]="title"></app-navbar-list-item>
       } @empty {
       <app-navbar-list-item>There is no title.</app-navbar-list-item>
       }
     </ul>
-    <div class="flex gap-5">
+    <div
+      class="flex-col flex gap-5 md:flex-row p-3 md:flex"
+      [class.hidden]="!isMenuOpen"
+    >
       <app-base-button-light
         title="Log in"
         routerLink="/login-form"
+        class="whitespace-nowrap"
       ></app-base-button-light>
       <app-base-button-dark
         title="Sign in"
         routerLink="/signup-form"
+        class="whitespace-nowrap"
       ></app-base-button-dark>
     </div>
   </div>

@@ -1,11 +1,13 @@
 <div
-  class="box w-[full] mt-[-3rem] h-[40rem] flex justify-center items-center border-2 border-black"
+  class="w-[full] h-fit min-h-[40rem] flex-col lg:flex-row flex justify-center items-center flex-wrap"
 >
   <div
     name="left text"
-    class="w-[50%] flex flex-col items-center justify-center gap-7"
+    class="w-full lg:w-[50%] mt-5 flex flex-col items-center justify-center gap-7"
   >
-    <p class="text-5xl text-center font-extrabold w-[50%]">
+    <p
+      class="lg:text-5xl md:text-3xl text-2xl text-center font-extrabold w-[50%]"
+    >
       The easiest
       <span
         class="py-2 bg-gradient-to-r from-cyan-500 to-blue-500 inline-block text-transparent bg-clip-text"
@@ -26,8 +28,11 @@
       See working demo
     </button>
   </div>
-  <div name="image" class="w-[50%] flex flex-col items-center justify-center">
-    <div class="w-[25rem] shadow-lg">
+  <div
+    name="image"
+    class="w-[50%] flex flex-col items-center justify-center mt-5"
+  >
+    <div class="w-[15rem] m-5 md:m-0 md:w-[25rem] shadow-lg">
       <img
         class="h-full w-full object-cover drop-shadow-xl rounded-xl mx-auto"
         src="../../../assets/images/calendar.jpg"

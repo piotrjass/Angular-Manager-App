@@ -5,6 +5,9 @@ import { BaseButtonDarkComponent } from '../../../../shared/components/base-butt
 import { BaseButtonLightComponent } from '../../../../shared/components/base-button-light/base-button-light.component';
 import { LogoComponent } from '../../../../shared/components/logo/logo.component';
 import { RouterLink } from '@angular/router';
+import { NgIconComponent, provideIcons } from '@ng-icons/core';
+import { tablerIcons } from '@ng-icons/tabler-icons';
+import { tablerMenu2 } from '@ng-icons/tabler-icons';
 
 @Component({
   selector: 'app-top-navbar',
@@ -16,10 +19,21 @@ import { RouterLink } from '@angular/router';
     BaseButtonLightComponent,
     LogoComponent,
     RouterLink,
+    NgIconComponent,
   ],
   templateUrl: './top-navbar.component.html',
   styleUrl: './top-navbar.component.css',
+  viewProviders: [
+    provideIcons({
+      tablerIcons,
+      tablerMenu2,
+    }),
+  ],
 })
 export class TopNavbarComponent {
   titles: string[] = ['About us', 'More', 'Contact'];
+  isMenuOpen: boolean = true;
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 }
