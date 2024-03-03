@@ -36,9 +36,10 @@ export class CalendarComponent {
     this.tasks = this.e.getTasks();
   }
   getTasksForDay(day: string) {
-    console.log(this.e.getTasksForTheDay(day));
+    this.tasksForDay = this.e.getTasksForTheDay(day);
   }
-  tasks: any[];
+  tasksForDay: string[] = [];
+  tasks: any[] = [];
 
   Monday = ['Refractoring'];
   Tuesday = ['Gym', 'Gym2', 'Gym3'];
@@ -73,9 +74,26 @@ export class CalendarComponent {
   }
   datesOfWeekForCurrentWeek = this.getDatesOfWeekForCurrentWeek();
   handleFormSubmission(formData: any) {
-    console.log();
     const { task, day, Priority } = formData;
-    console.log(task, day, Priority);
+    switch (day) {
+      case 'Monday':
+        this.Monday.push(task);
+        break;
+      case 'Tuesday':
+        this.Tuesday.push(task);
+        break;
+      case 'Wednesday':
+        this.Wednesday.push(task);
+        break;
+      case 'Thursday':
+        this.Thursday.push(task);
+        break;
+      case 'Friday':
+        this.Friday.push(task);
+        break;
+      default:
+        console.log('Invalid day');
+    }
   }
   //
 

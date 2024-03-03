@@ -13,6 +13,18 @@
     ngModel
     required
     minlength="5"
+    maxlength="20"
+    class="w-full text-xl bg-gray-100 rounded-lg drop-shadow-md p-5"
+  />
+  <label for="" class="text-xl font-semibold drop-shadow-md">Description</label>
+  <input
+    type="text"
+    placeholder="Description"
+    #Description="ngModel"
+    name="Description"
+    ngModel
+    required
+    minlength="5"
     maxlength="40"
     class="w-full text-xl bg-gray-100 rounded-lg drop-shadow-md p-5"
   />

@@ -4,6 +4,13 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class IdeasService {
+  gradients: string[] = [
+    'bg-gradient-to-r from-green-100 to-blue-100',
+    'bg-gradient-to-r from-purple-100 to-pink-100',
+    'bg-gradient-to-r from-yellow-100 to-orange-100',
+    'bg-gradient-to-r from-pink-100 to-red-100',
+    'bg-gradient-to-r from-blue-100 to-cyan-100',
+  ];
   ideas: any[] = [
     {
       title: 'Angular shop app',
@@ -25,6 +32,14 @@ export class IdeasService {
     },
   ];
 
+  addIdea(newIdea: string, description: string) {
+    const idea = {
+      title: newIdea,
+      desc: description,
+      color: this.gradients[Math.floor(Math.random() * this.gradients.length)],
+    };
+    this.ideas.push(idea);
+  }
   getIdeas() {
     return this.ideas;
   }
