@@ -1,0 +1,16 @@
+<div class="flex gap-5">
+  <div
+    class="transition-all duration-300 hover:scale-105 flex-col shadow-md p-5 min-w-[15rem] h-[20rem] rounded-xl flex items-center justify-center max-w-[15rem] gap-5 hover:cursor-pointer"
+    [class]="color"
+  >
+    <ng-icon
+      class="text-5xl w-fit h-fit flex justify-items-center"
+      [name]="icon"
+    ></ng-icon>
+    <p class="text-lg drop-shadow-md font-semibold">
+      {{ title }}
+    </p>
+
+    <p class="italic text-gray-700 text-center">{{ desc }}</p>
+  </div>
+</div>

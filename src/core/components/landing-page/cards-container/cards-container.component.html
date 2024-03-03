@@ -1,1 +1,10 @@
-<p>cards-container works!</p>
+<div class="w-full h-fit p-20 flex items-center justify-center gap-10">
+  @for(feature of features; track features.title){
+  <app-function-card
+    [title]="feature.title"
+    [color]="feature.color"
+    [icon]="feature.icon"
+    [desc]="feature.desc"
+  ></app-function-card>
+  }
+</div>
