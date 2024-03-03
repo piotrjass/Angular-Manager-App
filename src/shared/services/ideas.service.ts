@@ -7,15 +7,21 @@ export class IdeasService {
   ideas: any[] = [
     {
       title: 'Angular shop app',
-      color: 'bg-yellow-200',
+      icon: 'tablerBrandAngular',
+      desc: 'Using many concepts and modern Angular 17 syntax, develop simple minimalistic and useful shp app',
+      color: 'bg-gradient-to-r from-cyan-100 to-blue-100',
     },
     {
       title: 'Typescript server',
-      color: 'bg-blue-200',
+      icon: 'tablerBrandTypescript',
+      desc: 'Using experince from previous full stack project, set up new server based fully on typescript',
+      color: 'bg-gradient-to-r from-fuchsia-100 to-rose-100',
     },
     {
-      title: 'Blog app',
-      color: 'bg-green-200',
+      title: 'Bank app',
+      icon: 'tablerCashBanknote',
+      desc: 'For learning purposes, make a bank app using with many users and interactions between then. ',
+      color: 'bg-gradient-to-r from-green-200 to-teal-200',
     },
   ];
 
