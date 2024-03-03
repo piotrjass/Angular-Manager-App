@@ -13,7 +13,18 @@ export class TaskService {
     { task: 'Exercise', day: 'Saturday', priority: 'Low' },
   ];
 
+  private Monday = ['Refractoring'];
+  private Tuesday = ['Gym', 'Gym2', 'Gym3'];
+  private Wednesday = ['Interview'];
+  private Thursday = ['TV'];
+  private Friday = ['Sport'];
+
   getTasks() {
     return this.tasks;
+  }
+  getTasksForTheDay(day: string) {
+    return this.tasks
+      .filter((task) => task.day === day)
+      .map((task) => task.task);
   }
 }

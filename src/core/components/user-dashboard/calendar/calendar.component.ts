@@ -35,10 +35,10 @@ export class CalendarComponent {
   constructor(private e: TaskService) {
     this.tasks = this.e.getTasks();
   }
-
+  getTasksForDay(day: string) {
+    console.log(this.e.getTasksForTheDay(day));
+  }
   tasks: any[];
-
-  todo = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
 
   Monday = ['Refractoring'];
   Tuesday = ['Gym', 'Gym2', 'Gym3'];
@@ -46,31 +46,18 @@ export class CalendarComponent {
   Thursday = ['TV'];
   Friday = ['Sport'];
 
-  done = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
-
-  newTask: string = '';
-
   getDatesOfWeekForCurrentWeek(): string[] {
     const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
     const today = new Date();
     const currentDayOfWeek = today.getDay(); // 0 (Sunday) to 6 (Saturday)
-
-    // Calculate the difference between current day and Monday
     const daysUntilMonday = (7 + currentDayOfWeek - 1) % 7;
-
-    // Set the date to Monday of the current week
     const monday = new Date(today);
     monday.setDate(today.getDate() - daysUntilMonday);
-
-    // Create an array to hold dates of the week
     const weekDates: string[] = [];
-
-    // Helper function to add leading zeros
     const addLeadingZero = (num: number): string => {
       return num < 10 ? `0${num}` : `${num}`;
     };
 
-    // Populate the array with dates from Monday to Friday
     for (let i = 0; i < 5; i++) {
       const currentDate = new Date(monday);
       currentDate.setDate(monday.getDate() + i);
@@ -85,15 +72,14 @@ export class CalendarComponent {
     return weekDates;
   }
   datesOfWeekForCurrentWeek = this.getDatesOfWeekForCurrentWeek();
-
-  addNewTask() {
-    this.todo.push(this.newTask);
-  }
-
   handleFormSubmission(formData: any) {
-    this.todo.push(formData);
+    console.log();
+    const { task, day, Priority } = formData;
+    console.log(task, day, Priority);
   }
+  //
 
+  // cdk functions
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       console.log(

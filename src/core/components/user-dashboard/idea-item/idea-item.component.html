@@ -1,11 +1,11 @@
 <div class="flex gap-5">
   @for (idea of ideas; track idea.title){
   <div
-    class="transition-all duration-300 hover:scale-105 flex-col shadow-md p-5 min-w-[15rem] h-[15rem] rounded-xl flex items-center justify-center max-w-[15rem] gap-5"
+    class="transition-all duration-300 hover:scale-105 flex-col shadow-md p-5 min-w-[15rem] h-[15rem] rounded-xl flex items-center justify-center max-w-[15rem] gap-5 hover:cursor-pointer"
     [class]="idea.color"
   >
     <div class="flex justify-start gap-5 items-end w-full">
-      <ng-icon class="text-2xl" [name]="idea.icon"></ng-icon>
+      <ng-icon class="text-3xl" [name]="idea.icon"></ng-icon>
       <p class="text-lg drop-shadow-md font-semibold">
         {{ idea.title }}
       </p>

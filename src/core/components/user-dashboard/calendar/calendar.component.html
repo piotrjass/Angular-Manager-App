@@ -1,4 +1,6 @@
 <div class="flex w-[90%] justify-evenly flex-col gap-10 min-w-[25rem]">
+  <button (click)="getTasksForDay('Tuesday')">get task for the day</button>
+
   <div class="w-full flex justify-evenly">
     <div
       class="example-container flex flex-col text-center h-fit min-h-[20rem] w-[15%] border-2 border-gray-100 rounded-md shadow-md"
@@ -106,5 +108,8 @@
       </div>
     </div>
   </div>
-  <app-add-task-form class="mt-10 w-[50%] mx-auto"></app-add-task-form>
+  <app-add-task-form
+    (formSubmitted)="handleFormSubmission($event)"
+    class="mt-10 w-[50%] mx-auto"
+  ></app-add-task-form>
 </div>
