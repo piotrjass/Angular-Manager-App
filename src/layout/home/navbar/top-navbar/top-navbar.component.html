@@ -17,7 +17,10 @@
       [class.hidden]="!isMenuOpen"
     >
       @for (title of titles; track title) {
-      <app-navbar-list-item [title]="title"></app-navbar-list-item>
+      <app-navbar-list-item
+        (click)="scrollToSection(title.toLowerCase())"
+        [title]="title"
+      ></app-navbar-list-item>
       } @empty {
       <app-navbar-list-item>There is no title.</app-navbar-list-item>
       }

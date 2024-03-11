@@ -32,7 +32,8 @@ import { fromEvent, debounceTime } from 'rxjs';
   ],
 })
 export class TopNavbarComponent {
-  titles: string[] = ['About us', 'More', 'Contact'];
+  titles: string[] = ['About', 'More', 'Contact'];
+
   isMenuOpen: boolean = true;
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
@@ -49,6 +50,16 @@ export class TopNavbarComponent {
   checkScreenWidth() {
     if (window.innerWidth > 768) {
       this.isMenuOpen = true;
+    }
+  }
+  scrollToSection(sectionId: string) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest',
+      });
     }
   }
 }
