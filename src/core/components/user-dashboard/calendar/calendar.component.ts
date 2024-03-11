@@ -41,11 +41,11 @@ export class CalendarComponent {
   tasksForDay: string[] = [];
   tasks: any[] = [];
 
-  Monday = ['Refractoring'];
-  Tuesday = ['Gym', 'Gym2', 'Gym3'];
-  Wednesday = ['Interview'];
-  Thursday = ['TV'];
-  Friday = ['Sport'];
+  Monday = ['Refractoring', 'Coding'];
+  Tuesday = ['Gym', 'Gaming'];
+  Wednesday = ['Interview', 'Work'];
+  Thursday = ['Football', 'Learning'];
+  Friday = ['Go out', 'Running'];
 
   getDatesOfWeekForCurrentWeek(): string[] {
     const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];

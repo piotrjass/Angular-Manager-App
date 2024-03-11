@@ -11,7 +11,7 @@ import { MatIcon } from '@angular/material/icon';
   styleUrl: './top-navbar.component.css',
 })
 export class TopNavbarComponent {
-  isMenuOpen: boolean = false;
+  isMenuOpen: boolean = true;
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
